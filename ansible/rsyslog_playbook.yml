@@ -1,0 +1,7 @@
+- hosts: rsyslog
+  become: yes
+  tasks:
+    - name: copy rsyslog.conf
+      copy: src=/etc/ansible/roles/rsyslog/rsyslog.conf dest=/etc/rsyslog.conf
+    - name: Restart rsyslog
+      service: name=rsyslog state=restarted

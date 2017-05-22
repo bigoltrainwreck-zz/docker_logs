@@ -1,0 +1,3 @@
+sudo mkdir -p /data/rsyslog/ && sudo chmod 0777 /data/rsyslog/
+sudo docker build -t uladmin/rsyslog_agg:latest .
+sudo docker run --name rsyslog -d -v /data/rsyslog:/data/rsyslog -p 514:514 -p 514:514/udp uladmin/rsyslog_agg:latest

@@ -1,0 +1,5 @@
+- hosts: logmaster 
+  become: yes
+  tasks:
+    - name: copy logrotate config for log master to all hosts
+      copy: src=/etc/ansible/roles/log_aggr/log_aggr dest=/etc/logrotate.d/log_aggr
